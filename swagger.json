@@ -1,0 +1,38 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "OSU Hackathon REST API",
+        "description": "An API used for creating, registering, and modifying hackathons",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Ryan C Gross"
+        },
+        "license": {
+            "name": "MIT"
+        }
+    },
+    "basePath": "/api/v1",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/ping": {
+            "get": {
+                "description": "Returns HTTP status; service check",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    }
+}
