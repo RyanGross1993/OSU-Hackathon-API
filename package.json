@@ -20,5 +20,8 @@
     "express": "^4.16.4",
     "swagger-ui-express": "^4.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "sinon": "^7.2.2",
+    "sinon-express-mock": "^2.1.0"
+  }
 }
