@@ -1,12 +1,11 @@
-const express = require('express')
-const app = express()
-const swaggerUi = require('swagger-ui-express')
-const swaggerDocument = require('./swagger.json')
+import express from 'express';
+import swaggerRoutes from './routes/docs/swagger';
+import router from './routes/index';
+const app = express();
 
-app.get('/api/v1/ping', function(req, res) {
-    res.sendStatus(200)
-})
+app.use('/', router);
+var port = 3000;
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-
-app.listen(3000)
+app.listen(port, () => {
+    console.log(`Server is running on localhost:${port}!`);
+});
