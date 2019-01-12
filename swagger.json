@@ -33,6 +33,66 @@
                     "200": {}
                 }
             }
+        },
+        "/events": {
+            "get": {
+                "description": "Returns all hackathons from DB",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of hackathons",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Hackathon"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add a new hackathon",
+                "consumes": "application/json",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Hackathon",
+                        "schema": {
+                            "$ref": "#/definitions/Hackathon"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Hackathon": {
+            "type": "object",
+            "required": [
+                "id",
+                "name",
+                "date"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
         }
     }
 }
